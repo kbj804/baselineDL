@@ -1,0 +1,50 @@
+SEED:
+  random_seed: 42
+PREPROCESS:
+  preprocess_serial: npy
+  scaler: std
+DATALOADER:
+  num_workers: 8
+  shuffle: null
+  pin_memory: true
+  drop_last: null
+MODEL:
+  model_str: LSTMAutoencoder
+  num_features: null
+  input_dim: 6000
+  encoding_dim: 128
+  h_dims:
+  - 1024
+  - 512
+  - 256
+TRAIN:
+  num_epochs: 1000
+  batch_size: 256
+  learning_rate: 0.0001
+  early_stopping_patience: 50
+  optimizer: null
+  scheduler: null
+  momentum: null
+  weight_decay: 1.0e-05
+  loss_fn: mseloss
+  metric_fn: mse
+PERFORMANCE_RECORD:
+  column_list:
+  - train_serial
+  - train_timestamp
+  - model_str
+  - optimizer_str
+  - loss_function_str
+  - metric_function_str
+  - early_stopping_patience
+  - batch_size
+  - epoch
+  - learning_rate
+  - momentum
+  - random_seed
+  - epoch_index
+  - train_loss
+  - validation_loss
+  - train_score
+  - validation_score
+  - elapsed_time

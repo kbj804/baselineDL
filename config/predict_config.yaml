@@ -1,0 +1,25 @@
+DIRECTORY:
+  data:
+  result:
+
+PREPROCESS:
+  preprocess_serial:
+  scaler: # minmax or std
+
+DATALOADER:
+  num_workers:
+  shuffle: False
+  pin_memory:
+  drop_last: False
+
+MODEL:
+  model_str: SimpleAutoencoder
+  num_features: 2000
+
+SEED:
+  random_seed: 42
+
+PREDICT:
+  train_serial:
+  batch_size: 64
+
